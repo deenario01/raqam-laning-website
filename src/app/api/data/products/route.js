@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { readProductsPayload } from "@/lib/site-products";
+import { readProductsPayloadAsync } from "@/lib/site-products";
 
 export async function GET() {
   try {
-    const data = readProductsPayload();
+    const data = await readProductsPayloadAsync();
     return NextResponse.json(data);
   } catch (e) {
     console.error(e);

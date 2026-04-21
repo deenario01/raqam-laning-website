@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { unauthorizedIfNotAdmin } from "@/lib/admin-guard";
-import { writeProductsPayload, readProductsPayload } from "@/lib/site-products";
+import {
+  writeProductsPayloadAsync,
+  readProductsPayloadAsync,
+} from "@/lib/site-products";
 
 function normalizeProduct(p) {
   return {
@@ -32,6 +35,13 @@ function validatePayload(body) {
   return null;
 }
 
+export async function GET() {
+  const deny = await unauthorizedIfNotAdmin();
+  if (deny) return deny;
+  const data = await readProductsPayloadAsync();
+  return NextResponse.json(data);
+}
+
 export async function PUT(request) {
   const deny = await unauthorizedIfNotAdmin();
   if (deny) return deny;
@@ -50,6 +60,14 @@ export async function PUT(request) {
     items: body.items.map(normalizeProduct),
     featuredIds: body.featuredIds.map((id) => String(id).trim()),
   };
-  writeProductsPayload(payload);
-  return NextResponse.json(readProductsPayload());
+  try {
+    await writeProductsPayloadAsync(payload);
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json(
+      { error: "Failed to save products (storage unavailable)." },
+      { status: 500 },
+    );
+  }
+  return NextResponse.json(await readProductsPayloadAsync());
 }

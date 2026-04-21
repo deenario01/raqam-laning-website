@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { readNewsPayload } from "@/lib/site-news";
+import { readNewsPayloadAsync } from "@/lib/site-news";
 
 export async function GET() {
   try {
-    const data = readNewsPayload();
+    const data = await readNewsPayloadAsync();
     return NextResponse.json(data);
   } catch (e) {
     console.error(e);

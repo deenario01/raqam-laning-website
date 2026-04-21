@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AddToQuotationButton from "@/components/AddToQuotationButton";
 import QuantityBox from "@/components/QuantityBox";
-import { getProductByIdSync, getProductsSync } from "@/lib/site-products";
+import { readProductsPayloadAsync } from "@/lib/site-products";
 import PopularProducts from "@/components/PopularProducts";
 import BlogSocialShare from "@/components/BlogSocialShare";
 
@@ -12,8 +12,16 @@ export const dynamic = "force-dynamic";
 export default async function ProductDetails({ params }) {
   const { id } = await params;
   const productId = id;
-  const all = getProductsSync();
-  const product = getProductByIdSync(productId) || all[0];
+  const { items: all } = await readProductsPayloadAsync();
+  const product =
+    all.find((p) => p.id === productId) || all[0] || {
+      id: productId,
+      name: "Product",
+      primaryImage: "/assets/img/product/product1.webp",
+      description: "",
+      features: [],
+      applications: [],
+    };
   return (
     <>
     {/* Start header area */}

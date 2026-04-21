@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { unauthorizedIfNotAdmin } from "@/lib/admin-guard";
-import { writeNewsPayload, readNewsPayload } from "@/lib/site-news";
+import { writeNewsPayloadAsync, readNewsPayloadAsync } from "@/lib/site-news";
 
 function normalizeItem(n) {
   return {
@@ -43,6 +43,14 @@ export async function PUT(request) {
   if (err) return NextResponse.json({ error: err }, { status: 400 });
 
   const payload = { items: body.items.map(normalizeItem) };
-  writeNewsPayload(payload);
-  return NextResponse.json(readNewsPayload());
+  try {
+    await writeNewsPayloadAsync(payload);
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json(
+      { error: "Failed to save news (storage unavailable)." },
+      { status: 500 },
+    );
+  }
+  return NextResponse.json(await readNewsPayloadAsync());
 }
