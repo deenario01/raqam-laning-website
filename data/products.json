@@ -1,0 +1,360 @@
+{
+  "items": [
+    {
+      "id": "bopp_labels",
+      "name": "B.O.P.P Labels",
+      "primaryImage": "/assets/img/product/bopp_labels.jpeg",
+      "description": "Biaxially Oriented Polypropylene (B.O.P.P) labels are durable, versatile, and widely used across industries for their clarity, strength, and cost-effectiveness. At RAQAM, we produce premium B.O.P.P labels that enhance brand appeal while ensuring performance in tough conditions.",
+      "features": [
+        "Resistant to water, oil, and chemicals",
+        "High clarity and gloss for premium look",
+        "Suitable for wrap-arounds, cut & stack, IML",
+        "Excellent printability with vibrant colors"
+      ],
+      "applications": [
+        "Beverages",
+        "Food products",
+        "Household items",
+        "Petrochemicals"
+      ]
+    },
+    {
+      "id": "band_rolls_labels",
+      "name": "Band Roll Labels",
+      "primaryImage": "/assets/img/product/band_rolls_labels.png",
+      "description": "Band roll labels are a specialized solution designed for compact surfaces, ensuring secure branding without compromising design. Ideal for industries requiring small but impactful labeling.",
+      "features": [
+        "Up to 12-color printing capability",
+        "High durability in small printing areas",
+        "Available in multiple material options",
+        "Perfect for intricate branding requirements"
+      ],
+      "applications": [
+        "Confectionery",
+        "Dairy",
+        "Tobacco",
+        "FMCG products"
+      ]
+    },
+    {
+      "id": "cashier-roll-labels",
+      "name": "Cashier Roll Labels",
+      "primaryImage": "/assets/img/product/cashier-roll-labels.png",
+      "description": "RAQAM manufactures high-quality cashier roll labels and receipts, customized to client requirements. Our rolls are reliable, long-lasting, and tailored for smooth operation in retail and financial environments.",
+      "features": [
+        "Thermal and non-thermal options",
+        "Single or double-layered paper",
+        "Compatible with multiple POS systems",
+        "Crisp, long-lasting print quality"
+      ],
+      "applications": [
+        "Retail outlets",
+        "Supermarkets",
+        "Banks"
+      ]
+    },
+    {
+      "id": "cut_and_stacks",
+      "name": "Cut & Stack Labels",
+      "primaryImage": "/assets/img/product/cut_and_stacks.jpeg",
+      "description": "Cut & stack labels are a cost-effective, versatile solution for high-volume branding across bottles, jars, and cans. They combine practicality with premium aesthetics, widely used across industries.",
+      "features": [
+        "Available in paper or plastic material",
+        "Compatible with wet glue applications",
+        "Economical choice for mass production",
+        "Wide design flexibility"
+      ],
+      "applications": [
+        "Food & beverages",
+        "Paints",
+        "Household products",
+        "Petrochemicals"
+      ]
+    },
+    {
+      "id": "detergent_labels",
+      "name": "Detergent Labels",
+      "primaryImage": "/assets/img/product/detergent_labels.png",
+      "description": "Detergent labels must withstand moisture, abrasion, and chemical exposure. RAQAM produces durable and vibrant detergent labels that maintain their look and functionality even under harsh conditions.",
+      "features": [
+        "Resistant to water and repeated handling",
+        "Bright, lasting colors and finishes",
+        "Customizable shapes and adhesives",
+        "Maintains durability during storage and use"
+      ],
+      "applications": [
+        "Liquid soaps",
+        "Detergents",
+        "Fabric softeners"
+      ]
+    },
+    {
+      "id": "inmold_labels",
+      "name": "In-Mold Label",
+      "primaryImage": "/assets/img/product/inmold_labels.png",
+      "description": "In-Mold Labels (IML) integrate seamlessly during container manufacturing, offering a premium finish and lasting durability. They are ideal for products requiring strong, scratch-resistant decoration.",
+      "features": [
+        "Integrated during blow molding or injection molding",
+        "Scratch, moisture, and fade-resistant",
+        "Suitable for complex container designs",
+        "Wide material compatibility"
+      ],
+      "applications": [
+        "Food packaging",
+        "Consumer electronics",
+        "Bottles",
+        "Tubs"
+      ]
+    },
+    {
+      "id": "jewellery_labels",
+      "name": "Jewellery Labels",
+      "primaryImage": "/assets/img/product/jewellery_labels.png",
+      "description": "Jewellery labels are uniquely designed to blend elegance with function. RAQAM’s band labels are stylish yet discreet, ensuring accurate information display without compromising the aesthetic of fine jewelry.",
+      "features": [
+        "Customizable shapes and sizes",
+        "Does not damage or obscure jewelry",
+        "High-quality multi-color printing",
+        "Durable adhesive and long-lasting finish"
+      ],
+      "applications": [
+        "Jewelry stores",
+        "Luxury retail"
+      ]
+    },
+    {
+      "id": "juice_and_bevereges_labels",
+      "name": "Juice & Beverages Labels",
+      "primaryImage": "/assets/img/product/juice_and_bevereges_labels.jpeg",
+      "description": "Juice and beverage labels need to shine in diverse settings—from chilled refrigerators to retail shelves. RAQAM’s custom beverage labels are designed for durability, clarity, and vibrant branding.",
+      "features": [
+        "Resistant to condensation and temperature changes",
+        "Available with clear “no-label” look options",
+        "Premium foils and finishes available",
+        "Compliant with food safety standards"
+      ],
+      "applications": [
+        "Juices",
+        "Bottled water",
+        "Soft drinks"
+      ]
+    },
+    {
+      "id": "laser_labels",
+      "name": "Laser Labels",
+      "primaryImage": "/assets/img/product/laser_labels.png",
+      "description": "Laser labels from RAQAM are precision-made for barcode, logistics, and office use. They provide reliable print performance with sharp detail and lasting adhesion.",
+      "features": [
+        "Available in sheets and rolls",
+        "Compatible with laser printers",
+        "Strong adhesive backing",
+        "Customizable shapes and sizes"
+      ],
+      "applications": [
+        "Warehousing",
+        "Logistics",
+        "Office use"
+      ]
+    },
+    {
+      "id": "packing_tape_labels",
+      "name": "Packing Tape Labels",
+      "primaryImage": "/assets/img/product/packing_tape_labels.png",
+      "description": "Packing tape labels serve dual purposes—ensuring security and carrying brand visibility. RAQAM produces strong, customizable tapes that withstand handling and transit.",
+      "features": [
+        "Available in PVC, OPP, and BOPP materials",
+        "Custom branding and colors available",
+        "Durable adhesive for long-term sealing",
+        "Multipurpose use (security + promotion)"
+      ],
+      "applications": [
+        "Logistics",
+        "FMCG",
+        "Retail"
+      ]
+    },
+    {
+      "id": "personal_care_products_labels",
+      "name": "Personal Care Products Labels",
+      "primaryImage": "/assets/img/product/personal_care_products_labels.png",
+      "description": "Personal care products require distinct, attractive, and durable labeling across a wide variety of packaging types. RAQAM delivers creative and high-quality labels for cosmetics, perfumes, and wellness products.",
+      "features": [
+        "Special effects available (foil, varnish, hologram)",
+        "Resistant to oils and moisture",
+        "Flexible designs for bottles, tubes, tubs",
+        "Vibrant, attractive finishes"
+      ],
+      "applications": [
+        "Cosmetics",
+        "Perfumes",
+        "Skincare",
+        "Wellness products"
+      ]
+    },
+    {
+      "id": "pharmacy_labels",
+      "name": "Pharmacy Labels",
+      "primaryImage": "/assets/img/product/pharmacy_labels.png",
+      "description": "Pharmacy and medical labels demand clarity, safety, and precision. RAQAM provides trusted labeling solutions for healthcare applications, ensuring compliance and reliability.",
+      "features": [
+        "Options include pharmacy, medical record, inpatient, outpatient, and lab labels",
+        "High-clarity printing for safety information",
+        "Custom adhesives for long-lasting application",
+        "Patient-friendly wristbands available"
+      ],
+      "applications": [
+        "Hospitals",
+        "Clinics",
+        "Labs",
+        "Pharmacies"
+      ]
+    },
+    {
+      "id": "price_labels",
+      "name": "Price Labels",
+      "primaryImage": "/assets/img/product/price_labels.png",
+      "description": "Price labels are an essential promotional tool, offering flexibility for retail. RAQAM’s labels combine clarity with durable adhesives and come in multiple customization options.",
+      "features": [
+        "Peelable or permanent adhesives",
+        "Compatible with pricing guns",
+        "Multi-line printing available",
+        "Variety of colors and shapes"
+      ],
+      "applications": [
+        "Supermarkets",
+        "Retail stores"
+      ]
+    },
+    {
+      "id": "promotional_labels",
+      "name": "Promotional Labels",
+      "primaryImage": "/assets/img/product/promotional_labels.png",
+      "description": "Promotional labels are designed to capture attention and boost sales. RAQAM creates bold, colorful designs for special offers and campaigns.",
+      "features": [
+        "Highly customizable for branding",
+        "Multi-color, eye-catching designs",
+        "Durable and easy to apply",
+        "Suitable for short or long-term use"
+      ],
+      "applications": [
+        "Promotions",
+        "Sales campaigns",
+        "Seasonal offers"
+      ]
+    },
+    {
+      "id": "pvc_sealing_tape_labels",
+      "name": "PVC Sealing Tape Labels",
+      "primaryImage": "/assets/img/product/pvc_sealing_tape_labels.png",
+      "description": "PVC sealing tapes provide both security and branding, designed to indicate tampering and protect product authenticity. They are versatile and reliable in harsh handling conditions.",
+      "features": [
+        "Available in various colors and sizes",
+        "Custom designs with logos or warnings",
+        "Durable PVC adhesive",
+        "Multipurpose sealing & labeling"
+      ],
+      "applications": [
+        "Logistics",
+        "Industrial packaging",
+        "Export goods"
+      ]
+    },
+    {
+      "id": "ribbon_labels",
+      "name": "Ribbon Labels",
+      "primaryImage": "/assets/img/product/ribbon_labels.png",
+      "description": "RAQAM’s ribbons are built to deliver consistent, long-lasting print quality in multiple environments. Available in wax, resin, and mixed options, they suit diverse industrial needs.",
+      "features": [
+        "Single and multi-color combinations",
+        "High resistance to wear and environment",
+        "Long-lasting durability",
+        "Compatible with leading thermal printers"
+      ],
+      "applications": [
+        "POS",
+        "Logistics",
+        "Warehousing",
+        "Retail"
+      ]
+    },
+    {
+      "id": "shrink_sleeve_labels",
+      "name": "Shrink Sleeve Labels",
+      "primaryImage": "/assets/img/product/shrink_sleeve_labels.png",
+      "description": "Shrink sleeve labels offer 360-degree branding with vibrant colors and unique finishes. They are ideal for irregular shapes and products exposed to moisture or friction.",
+      "features": [
+        "Up to 70% shrink capability",
+        "Smooth, premium feel",
+        "Resistant to moisture and handling",
+        "Supports holographic and foil effects"
+      ],
+      "applications": [
+        "Beverages",
+        "Personal care",
+        "Household products"
+      ]
+    },
+    {
+      "id": "unprinted_labels",
+      "name": "Unprinted Labels",
+      "primaryImage": "/assets/img/product/unprinted_labels.png",
+      "description": "Unprinted labels provide flexibility for clients to customize on demand. RAQAM offers blank labels in a range of materials and sizes, tailored to customer requirements.",
+      "features": [
+        "Customizable shapes and dimensions",
+        "Available in A4 sheets or rolls",
+        "Compatible with laser and barcode printers",
+        "Durable adhesive options"
+      ],
+      "applications": [
+        "Logistics",
+        "Warehousing",
+        "Retail",
+        "Manufacturing"
+      ]
+    },
+    {
+      "id": "holographic_labels",
+      "name": "Holographic Labels",
+      "primaryImage": "/uploads/products/2036b34e-fd04-4229-b34f-1827b78c5146.png",
+      "description": "Holo",
+      "features": [
+        "Holo"
+      ],
+      "applications": [
+        "Holo"
+      ]
+    },
+    {
+      "id": "pvc_tube",
+      "name": "PVC Tube",
+      "primaryImage": "/uploads/products/b0b7491c-07cc-417b-99dc-e4e8e5997744.png",
+      "description": "PVC Tube",
+      "features": [
+        "PVC Tube"
+      ],
+      "applications": [
+        "PVC Tube"
+      ]
+    },
+    {
+      "id": "adhesive_labels",
+      "name": "Adhesive Labels",
+      "primaryImage": "/uploads/products/1da1adc1-a7cc-4e6e-a7e7-b901e8eb0de9.png",
+      "description": "Adhesive Labels",
+      "features": [
+        "Adhesive Labels"
+      ],
+      "applications": [
+        "Adhesive Labels"
+      ]
+    }
+  ],
+  "featuredIds": [
+    "band_rolls_labels",
+    "cashier-roll-labels",
+    "laser_labels",
+    "personal_care_products_labels",
+    "unprinted_labels",
+    "bopp_labels"
+  ]
+}
