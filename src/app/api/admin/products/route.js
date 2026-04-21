@@ -64,8 +64,15 @@ export async function PUT(request) {
     await writeProductsPayloadAsync(payload);
   } catch (e) {
     console.error(e);
+    const hint =
+      process.env.NETLIFY_SITE_ID &&
+      !(process.env.NETLIFY_AUTH_TOKEN || process.env.NETLIFY_BLOBS_TOKEN)
+        ? " On Netlify, add NETLIFY_AUTH_TOKEN (Personal Access Token with Blobs access) under Site configuration → Environment variables."
+        : "";
     return NextResponse.json(
-      { error: "Failed to save products (storage unavailable)." },
+      {
+        error: `Failed to save products (storage unavailable).${hint}`,
+      },
       { status: 500 },
     );
   }

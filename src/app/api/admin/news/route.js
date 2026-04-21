@@ -47,8 +47,13 @@ export async function PUT(request) {
     await writeNewsPayloadAsync(payload);
   } catch (e) {
     console.error(e);
+    const hint =
+      process.env.NETLIFY_SITE_ID &&
+      !(process.env.NETLIFY_AUTH_TOKEN || process.env.NETLIFY_BLOBS_TOKEN)
+        ? " On Netlify, add NETLIFY_AUTH_TOKEN under Site configuration → Environment variables."
+        : "";
     return NextResponse.json(
-      { error: "Failed to save news (storage unavailable)." },
+      { error: `Failed to save news (storage unavailable).${hint}` },
       { status: 500 },
     );
   }
