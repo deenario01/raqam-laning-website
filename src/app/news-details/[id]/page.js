@@ -3,13 +3,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogSocialShare from "@/components/BlogSocialShare";
 import RelatedTags from "@/components/RelatedTags";
-import { getNewsByIdSync } from "@/lib/site-news";
+import { readNewsPayloadAsync } from "@/lib/site-news";
 
 export const dynamic = "force-dynamic";
 
 export default async function BlogDetailsDynamic({ params }) {
   const { id: blogId } = await params;
-  const currentBlog = getNewsByIdSync(blogId);
+  const { items } = await readNewsPayloadAsync();
+  const currentBlog = items.find((n) => n.id === blogId);
 
   if (!currentBlog) {
     return (

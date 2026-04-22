@@ -1,13 +1,18 @@
 import fs from "fs";
 import path from "path";
 import { readBlobJson, siteUsesNetlifyBlobs, writeBlobJson } from "@/lib/netlify-site-blobs";
+import defaultNewsJson from "../../data/news.json";
 
 const NEWS_PATH = path.join(process.cwd(), "data", "news.json");
 const NEWS_BLOB_KEY = "news";
 
 function readNewsFromFs() {
-  const raw = fs.readFileSync(NEWS_PATH, "utf8");
-  return JSON.parse(raw);
+  try {
+    const raw = fs.readFileSync(NEWS_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return defaultNewsJson;
+  }
 }
 
 function isValidNewsPayload(data) {

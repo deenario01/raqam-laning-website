@@ -1,13 +1,23 @@
 import fs from "fs";
 import path from "path";
 import { readBlobJson, siteUsesNetlifyBlobs, writeBlobJson } from "@/lib/netlify-site-blobs";
+import defaultProductsJson from "../../data/products.json";
 
 const PRODUCTS_PATH = path.join(process.cwd(), "data", "products.json");
 const PRODUCTS_BLOB_KEY = "products";
 
+/**
+ * Read `data/products.json` when present (local dev, full deploy tree).
+ * On Netlify serverless functions the file is not bundled, so this falls back
+ * to the JSON import above (build-time) — same as your repo file.
+ */
 function readProductsFromFs() {
-  const raw = fs.readFileSync(PRODUCTS_PATH, "utf8");
-  return JSON.parse(raw);
+  try {
+    const raw = fs.readFileSync(PRODUCTS_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return defaultProductsJson;
+  }
 }
 
 function isValidProductsPayload(data) {
