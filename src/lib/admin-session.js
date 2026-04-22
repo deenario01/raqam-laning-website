@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { getAdminConfig } from "@/lib/admin-config";
 
 const COOKIE = "admin_session";
 const MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
@@ -36,7 +37,5 @@ export function verifyAdminSession(token, secret) {
 }
 
 export function getAdminEnv() {
-  const passcode = process.env.ADMIN_PASSCODE?.trim();
-  const sessionSecret = process.env.ADMIN_SESSION_SECRET?.trim();
-  return { passcode, sessionSecret };
+  return getAdminConfig();
 }

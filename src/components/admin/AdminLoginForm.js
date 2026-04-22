@@ -43,7 +43,7 @@ export default function AdminLoginForm({ onLoggedIn }) {
             <div className="single__widget widget__bg">
               <h2 className="widget__title position__relative h3 mb-25">Sign in</h2>
               <p className="mb-25" style={{ color: "#666", lineHeight: 1.6 }}>
-                Enter the 6-digit passcode from your server environment (<code>ADMIN_PASSCODE</code>).
+                Enter the 6-digit passcode from <code>config/admin.json</code>.
               </p>
               <form onSubmit={handleLogin}>
                 <label className="d-block mb-15">

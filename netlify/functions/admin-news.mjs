@@ -23,7 +23,7 @@ export default async (req) => {
   if (auth.ok === false) {
     if (auth.reason === "not_configured") {
       return jsonResponse(
-        { error: "Admin is not configured. Set ADMIN_PASSCODE and ADMIN_SESSION_SECRET." },
+        { error: "Admin is not configured. Set passcode and sessionSecret in config/admin.json." },
         { status: 503 }
       );
     }

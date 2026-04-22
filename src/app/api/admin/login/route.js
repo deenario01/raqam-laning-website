@@ -11,13 +11,13 @@ export async function POST(request) {
   const { passcode, sessionSecret } = getAdminEnv();
   if (!passcode || !sessionSecret) {
     return NextResponse.json(
-      { error: "Admin is not configured. Set ADMIN_PASSCODE and ADMIN_SESSION_SECRET." },
+      { error: "Admin is not configured. Set passcode and sessionSecret in config/admin.json." },
       { status: 503 }
     );
   }
   if (!/^\d{6}$/.test(passcode)) {
     return NextResponse.json(
-      { error: "Server misconfiguration: ADMIN_PASSCODE must be exactly 6 digits." },
+      { error: "Server misconfiguration: passcode in config/admin.json must be exactly 6 digits." },
       { status: 503 }
     );
   }

@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import adminConfig from "../../../config/admin.json";
 
 const COOKIE = "admin_session";
 
@@ -36,7 +37,7 @@ function getCookieValue(cookieHeader, name) {
 }
 
 export function isAuthorizedAdminRequest(req) {
-  const sessionSecret = process.env.ADMIN_SESSION_SECRET?.trim();
+  const sessionSecret = String(adminConfig.sessionSecret ?? "").trim();
   if (!sessionSecret) return { ok: false, reason: "not_configured" };
   const token = getCookieValue(req.headers.get("cookie"), COOKIE);
   if (!token || !verifyAdminSession(token, sessionSecret)) {
