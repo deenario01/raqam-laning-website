@@ -1,24 +1,13 @@
 import fs from "fs";
 import path from "path";
-import { readBlobJson, siteUsesNetlifyBlobs, writeBlobJson } from "@/lib/netlify-site-blobs";
-import defaultProductsJson from "../../data/products.json";
+import {
+  tryFetchFirstPartyApiPath,
+  fetchPublicJsonByPath,
+} from "@/lib/site-content-origin";
+import defaultProductsJson from "../../public/data/products.json";
 
-const PRODUCTS_PATH = path.join(process.cwd(), "data", "products.json");
-const PRODUCTS_BLOB_KEY = "products";
-
-/**
- * Read `data/products.json` when present (local dev, full deploy tree).
- * On Netlify serverless functions the file is not bundled, so this falls back
- * to the JSON import above (build-time) — same as your repo file.
- */
-function readProductsFromFs() {
-  try {
-    const raw = fs.readFileSync(PRODUCTS_PATH, "utf8");
-    return JSON.parse(raw);
-  } catch {
-    return defaultProductsJson;
-  }
-}
+const PRODUCTS_PATH = path.join(process.cwd(), "public", "data", "products.json");
+const PUBLIC_URL_PATH = "/data/products.json";
 
 function isValidProductsPayload(data) {
   return (
@@ -29,33 +18,50 @@ function isValidProductsPayload(data) {
   );
 }
 
-/** Prefer in API routes and SSR on Netlify (blobs); falls back to repo JSON. */
-export async function readProductsPayloadAsync() {
-  if (siteUsesNetlifyBlobs()) {
-    try {
-      const fromBlob = await readBlobJson(PRODUCTS_BLOB_KEY);
-      if (isValidProductsPayload(fromBlob)) return fromBlob;
-    } catch (e) {
-      console.error("readProductsPayloadAsync blob error:", e);
-    }
+function readProductsFromPublicFs() {
+  try {
+    const raw = fs.readFileSync(PRODUCTS_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
   }
-  return readProductsFromFs();
 }
 
+/**
+ * Netlify: read via `/api/data/products` (served by netlify/functions, Blobs+static).
+ * Local: filesystem + public URL fetch + import fallback.
+ */
+export async function readProductsPayloadAsync() {
+  const fromApi = await tryFetchFirstPartyApiPath("/api/data/products");
+  if (isValidProductsPayload(fromApi)) return fromApi;
+
+  const fromFetch = await fetchPublicJsonByPath(PUBLIC_URL_PATH);
+  if (isValidProductsPayload(fromFetch)) return fromFetch;
+
+  const fromFs = readProductsFromPublicFs();
+  if (isValidProductsPayload(fromFs)) return fromFs;
+
+  return defaultProductsJson;
+}
+
+/** Local and preview: write to public/data. On Netlify, admin is handled by `admin-products` function. */
 export async function writeProductsPayloadAsync(payload) {
-  if (siteUsesNetlifyBlobs()) {
-    await writeBlobJson(PRODUCTS_BLOB_KEY, payload);
-    return;
+  const dir = path.dirname(PRODUCTS_PATH);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
   fs.writeFileSync(PRODUCTS_PATH, JSON.stringify(payload, null, 2), "utf8");
 }
 
-/** Sync read from `data/products.json` (local/build and fallback). */
 export function readProductsPayload() {
-  return readProductsFromFs();
+  return readProductsFromPublicFs() || defaultProductsJson;
 }
 
 export function writeProductsPayload(payload) {
+  const dir = path.dirname(PRODUCTS_PATH);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
   fs.writeFileSync(PRODUCTS_PATH, JSON.stringify(payload, null, 2), "utf8");
 }
 

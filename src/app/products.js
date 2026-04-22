@@ -1,4 +1,4 @@
-/** Product data is stored in `data/products.json`. */
+/** Product data is stored in `public/data/products.json` and served as `/data/products.json`. */
 export {
   getProductsSync,
   getProductByIdSync,

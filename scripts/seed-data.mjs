@@ -14,9 +14,10 @@ const featuredMatch = raw.match(/const featuredProductsList = (\[[\s\S]*?\n\])/)
 if (!featuredMatch) throw new Error("Could not parse featuredProductsList");
 const featuredIds = eval(featuredMatch[1]);
 
-fs.mkdirSync(path.join(root, "data"), { recursive: true });
+const publicData = path.join(root, "public", "data");
+fs.mkdirSync(publicData, { recursive: true });
 fs.writeFileSync(
-  path.join(root, "data", "products.json"),
+  path.join(publicData, "products.json"),
   JSON.stringify({ items: products, featuredIds }, null, 2),
   "utf8"
 );
@@ -28,9 +29,9 @@ if (!blogMatch) throw new Error("Could not parse blogData");
 const blogData = eval(`(${blogMatch[1]})`);
 const newsItems = Object.values(blogData);
 fs.writeFileSync(
-  path.join(root, "data", "news.json"),
+  path.join(publicData, "news.json"),
   JSON.stringify({ items: newsItems }, null, 2),
   "utf8"
 );
 
-console.log("Wrote data/products.json and data/news.json");
+console.log("Wrote public/data/products.json and public/data/news.json");

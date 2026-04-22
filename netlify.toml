@@ -1,6 +1,61 @@
 [build]
   command = "npm run build"
 
+# Native Netlify Functions: `getStore({ name, consistency: "strong" })` is auto-wired (procision pattern).
+# Next.js app routes for these paths are used by `next dev` only; on Netlify they are shadowed.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Match procision: same URLs as the app, rewrite to one function per resource (force to beat Next).
+[[redirects]]
+  from = "/api/data/products"
+  to = "/.netlify/functions/data-products"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/data/products/"
+  to = "/.netlify/functions/data-products"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/data/news"
+  to = "/.netlify/functions/data-news"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/data/news/"
+  to = "/.netlify/functions/data-news"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin/products"
+  to = "/.netlify/functions/admin-products"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin/products/"
+  to = "/.netlify/functions/admin-products"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin/news"
+  to = "/.netlify/functions/admin-news"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin/news/"
+  to = "/.netlify/functions/admin-news"
+  status = 200
+  force = true
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
